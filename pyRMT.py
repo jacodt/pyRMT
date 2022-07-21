@@ -580,7 +580,7 @@ def optimalShrinkage(X, return_covariance=False, method='rie'):
                            # the eigenvalues in ascending order.
     lambda_hats = None
     
-    if method is not 'kernel':
+    if method != 'kernel':
         use_inverse_wishart = (method == 'iw')
         xis = map(lambda x: xiHelper(x, q, E), eigvals)
         Gammas = map(lambda x: gammaHelper(x, q, N, lambda_N, inverse_wishart=use_inverse_wishart), eigvals)
